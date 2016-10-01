@@ -1,1 +1,7 @@
-#budgetTable { text-align: center }
+html, body {
+  width: 100%;
+}
+table {
+  margin: 0 auto;
+  width: 20%;
+}
