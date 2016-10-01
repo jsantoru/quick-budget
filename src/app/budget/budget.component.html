@@ -1,0 +1,7 @@
+<table>
+  <tr><th>Category</th><th>Budgeted</th></tr>
+  <tr><td>Hardcoded</td><td>Hardcoded2</td></tr>
+  <span *ngFor="let budgetItem of budgetItems">
+    <app-budget-item [budgetItem]="budgetItem"></app-budget-item>
+  </span>
+</table>
