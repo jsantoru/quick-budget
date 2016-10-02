@@ -3,7 +3,12 @@
   <table class="table table-striped table-condensed table-hover">
     <tr><th>Category</th><th>Budgeted</th></tr>
     <tr *ngFor="let budgetItem of budgetItems">
-      <td>{{budgetItem.category}}</td><td align="right"><span class="badge badge-success">${{budgetItem.budgeted}}</span></td>
+      <td>{{budgetItem.category}}</td>
+      <td align="right">
+        <span class="glyphicon glyphicon glyphicon-download"></span>
+        <span class="badge badge-success">${{budgetItem.budgeted}}</span>
+        <span class="glyphicon glyphicon glyphicon-upload"></span>
+      </td>
     </tr>
   </table>
 </div>
