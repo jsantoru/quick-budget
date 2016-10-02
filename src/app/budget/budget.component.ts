@@ -8,11 +8,25 @@ import { BudgetItem } from '../budget-item/BudgetItem'
 })
 export class BudgetComponent implements OnInit {
 
+  toBeBudgeted: number = 0;
+
   budgetItems: BudgetItem[] = [
     {category:"Housing",budgeted: 2000},
     {category:"Food", budgeted:500},
     {category:"Cars", budgeted:500}
     ]
+
+  onClickBudgeted(budgetItem:BudgetItem, direction:string) {
+    if(direction == "up") {
+      budgetItem.budgeted += 100;
+      this.toBeBudgeted -= 100;
+    } else if(direction == "down") {
+      budgetItem.budgeted -= 100;
+      this.toBeBudgeted += 100;
+    } else {
+      alert("BADNESS");
+    }
+  }
 
   constructor() { }
 

@@ -4,8 +4,14 @@
     <tr><th>Category Group</th><th>Budgeted</th></tr>
     <tr *ngFor="let budgetItem of budgetItems">
       <td>{{budgetItem.category}}</td>
-      <td align="right"><span class="glyphicon glyphicon glyphicon-download"></span><span class="badge badge-success">${{budgetItem.budgeted}}</span>
-        <span class="glyphicon glyphicon glyphicon-upload"></span></td>
+      <td align="right">
+        <span class="glyphicon glyphicon glyphicon-download"
+              (click)="onClickBudgeted(budgetItem, 'down')"></span>
+        <span class="badge badge-success">${{budgetItem.budgeted}}</span>
+        <span class="glyphicon glyphicon glyphicon-upload"
+              (click)="onClickBudgeted(budgetItem, 'up')"></span></td>
     </tr>
   </table>
+  <span>To Be Budgeted </span>
+  <span class="badge">${{toBeBudgeted}}</span>
 </div>

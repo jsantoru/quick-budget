@@ -22,9 +22,9 @@ export class QBInputComponent implements OnInit {
 
   onClickIncome(direction:string) {
     if(direction == "up") {
-      this.monthlyIncome = this.monthlyIncome + 100;
+      this.monthlyIncome += 100;
     } else if(direction == "down") {
-      this.monthlyIncome = this.monthlyIncome - 100;
+      this.monthlyIncome -= 100;
     } else {
       alert("BADNESS");
     }
