@@ -15,4 +15,5 @@
   <span>To Be Budgeted </span>
   <span class="badge">${{toBeBudgeted}}</span>
 </div>
-<app-breakdown></app-breakdown>
+<!--TODO: add property for 'selectedBudgetItem' and 'onClickBudgetItem' -->
+<app-breakdown [categoryGroup]="budgetItems[1].category" [budgetItems]="budgetItems[1].subCategoryBudgetItems"></app-breakdown>

@@ -12,9 +12,12 @@ export class BudgetComponent implements OnInit {
 
   // TODO: these should contain the list of 'breakdowns'
   budgetItems: BudgetItem[] = [
-    {category:"Housing",budgeted: 2000},
-    {category:"Food", budgeted:500},
-    {category:"Cars", budgeted:500}
+    {category:"Housing", budgeted: 2000, subCategoryBudgetItems:[]},
+    {category:"Food", budgeted:500, subCategoryBudgetItems:[
+      {category:"Groceries", budgeted:300, subCategoryBudgetItems:[]},
+      {category:"Eating Out", budgeted:200, subCategoryBudgetItems:[]}
+    ]},
+    {category:"Cars", budgeted:500, subCategoryBudgetItems:[]}
     ]
 
   onClickBudgeted(budgetItem:BudgetItem, direction:string) {
@@ -33,8 +36,8 @@ export class BudgetComponent implements OnInit {
   @Input()
   set familySize(arg:number) {
     if(arg) {
-      console.log("INTERCEPT INPUT: ", arg);
-      this.budgetItems.push({category: "New", budgeted: 100});
+      console.log("BudgetComponent: ", arg);
+      this.budgetItems.push({category: "New", budgeted: 100, subCategoryBudgetItems:[]});
     }
   }
 

@@ -21,7 +21,7 @@ export class QBInputComponent implements OnInit {
       alert("BADNESS");
     }
 
-    console.log("sending event: ", this.familySize);
+    console.log("QBInputComponent: ", this.familySize);
     //this.onClickFamilyEvent.next(this.familySize);
     this.onClickFamilyEvent.emit(this.familySize);
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { BudgetItem } from '../budget-item/BudgetItem'
 
 @Component({
@@ -8,9 +8,11 @@ import { BudgetItem } from '../budget-item/BudgetItem'
 })
 export class BreakdownComponent implements OnInit {
 
-  categoryGroup: string = "Food";
+  @Input()
+  categoryGroup: string;
 
-  budgetItems: BudgetItem[] = [{category:"Groceries",budgeted: 300}, {category:"Eating Out", budgeted:200}]
+  @Input()
+  budgetItems: BudgetItem[];
 
   constructor() { }
 

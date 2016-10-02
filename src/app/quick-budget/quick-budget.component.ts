@@ -10,7 +10,7 @@ export class QuickBudgetComponent implements OnInit {
   theFamilySize: number;
 
   handleOnClickFamilyEvent(arg : number) {
-    console.log("HANDLE EVENT: ", arg);
+    console.log("QuickBudgetComponent: ", arg);
     this.theFamilySize = arg;
   }
 
