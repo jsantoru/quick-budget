@@ -32,7 +32,10 @@ export class BudgetComponent implements OnInit {
 
   @Input()
   set familySize(arg:number) {
-    console.log("INTERCEPT INPUT: ", arg);
+    if(arg) {
+      console.log("INTERCEPT INPUT: ", arg);
+      this.budgetItems.push({category: "New", budgeted: 100});
+    }
   }
 
   constructor() {
