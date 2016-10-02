@@ -10,6 +10,7 @@ export class BudgetComponent implements OnInit {
 
   toBeBudgeted: number = 0;
 
+  // TODO: these should contain the list of 'breakdowns'
   budgetItems: BudgetItem[] = [
     {category:"Housing",budgeted: 2000},
     {category:"Food", budgeted:500},
@@ -17,24 +18,21 @@ export class BudgetComponent implements OnInit {
     ]
 
   onClickBudgeted(budgetItem:BudgetItem, direction:string) {
+    let changeAmount: number = 100
     if(direction == "up") {
-      budgetItem.budgeted += 100;
-      this.toBeBudgeted -= 100;
+      budgetItem.budgeted += changeAmount;
+      this.toBeBudgeted -= changeAmount;
     } else if(direction == "down") {
-      budgetItem.budgeted -= 100;
-      this.toBeBudgeted += 100;
+      budgetItem.budgeted -= changeAmount;
+      this.toBeBudgeted += changeAmount;
     } else {
       alert("BADNESS");
     }
   }
 
   @Input()
-  set familySize(arg) {
+  set familySize(arg:number) {
     console.log("INTERCEPT INPUT: ", arg);
-  }
-
-  handleOnClickFamilyEvent(arg) {
-    alert("HANDLE ON CLICK FAMILY EVENT: " + arg);
   }
 
   constructor() {
