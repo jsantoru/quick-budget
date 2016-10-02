@@ -8,7 +8,11 @@ import { BudgetItem } from '../budget-item/BudgetItem'
 })
 export class BudgetComponent implements OnInit {
 
-  budgetItems: BudgetItem[] = [{category:"Housing",budgeted: 2000}, {category:"Food", budgeted:500}]
+  budgetItems: BudgetItem[] = [
+    {category:"Housing",budgeted: 2000},
+    {category:"Food", budgeted:500},
+    {category:"Cars", budgeted:500}
+    ]
 
   constructor() { }
 

@@ -1,16 +1,4 @@
-#tables {
-  margin-left: auto;
-  margin-right: auto;
-  float:none;
-  width:60%;
-}
-
 #budgettable {
   width: 40%;
   float: left;
-}
-
-#breakdowntable {
-  width:40%;
-  float:right;
 }
