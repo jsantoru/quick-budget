@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { BudgetItem } from '../budget-item/BudgetItem'
 
 @Component({
@@ -28,7 +28,18 @@ export class BudgetComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  @Input()
+  set familySize(arg) {
+    console.log("INTERCEPT INPUT: ", arg);
+  }
+
+  handleOnClickFamilyEvent(arg) {
+    alert("HANDLE ON CLICK FAMILY EVENT: " + arg);
+  }
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

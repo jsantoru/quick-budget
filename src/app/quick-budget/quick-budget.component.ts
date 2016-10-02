@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-quick-budget',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quick-budget.component.css']
 })
 export class QuickBudgetComponent implements OnInit {
+
+  theFamilySize: number;
+
+  handleOnClickFamilyEvent(arg : number) {
+    console.log("HANDLE EVENT: ", arg);
+    this.theFamilySize = arg;
+  }
 
   constructor() { }
 

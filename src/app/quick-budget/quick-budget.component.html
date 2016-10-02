@@ -1,6 +1,5 @@
 <app-header></app-header>
-<app-qbinput></app-qbinput>
+<app-qbinput (onClickFamilyEvent)="handleOnClickFamilyEvent($event)"></app-qbinput>
 <div id="tables">
-  <app-budget></app-budget>
-  <app-breakdown></app-breakdown>
+  <app-budget [familySize]="theFamilySize"></app-budget>
 </div>
