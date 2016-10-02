@@ -1,7 +1,16 @@
-html, body {
-  width: 100%;
+#tables {
+  margin-left: auto;
+  margin-right: auto;
+  float:none;
+  width:60%;
 }
-table {
-  margin: 0 auto;
-  width: 20%;
+
+#budgettable {
+  width: 40%;
+  float: left;
+}
+
+#breakdowntable {
+  width:40%;
+  float:right;
 }

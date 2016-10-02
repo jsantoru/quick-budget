@@ -1,6 +1,18 @@
+<div id="tables">
+<div id="budgettable">
+<table class="table table-striped table-condensed table-hover">
+  <tr><th>Category Group</th><th>Budgeted</th></tr>
+  <tr *ngFor="let budgetItem of budgetItems">
+    <td>{{budgetItem.category}}</td><td>${{budgetItem.budgeted}}</td>
+  </tr>
+</table>
+</div>
+<div id="breakdowntable">
 <table class="table table-striped table-condensed table-hover">
   <tr><th>Category</th><th>Budgeted</th></tr>
   <tr *ngFor="let budgetItem of budgetItems">
     <td>{{budgetItem.category}}</td><td>${{budgetItem.budgeted}}</td>
   </tr>
 </table>
+</div>
+</div>
