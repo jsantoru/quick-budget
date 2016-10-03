@@ -1,1 +1,7 @@
-h1,h4,nav { text-align: center }
+h1,h4,nav,p { text-align: center }
+.jumbotron {
+}
+
+.btn {
+  border-radius: 5px;
+}
