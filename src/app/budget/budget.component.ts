@@ -10,15 +10,28 @@ export class BudgetComponent implements OnInit {
 
   toBeBudgeted: number = 0;
 
-  // TODO: these should contain the list of 'breakdowns'
   budgetItems: BudgetItem[] = [
-    {category:"Housing", budgeted: 2000, subCategoryBudgetItems:[]},
+    {category:"Housing", budgeted: 2000, subCategoryBudgetItems:[
+      {category:"Rent/Mortgage", budgeted: 1700, subCategoryBudgetItems:[]},
+      {category:"Maintenance", budgeted: 300, subCategoryBudgetItems:[]}
+    ]},
     {category:"Food", budgeted:500, subCategoryBudgetItems:[
       {category:"Groceries", budgeted:300, subCategoryBudgetItems:[]},
       {category:"Eating Out", budgeted:200, subCategoryBudgetItems:[]}
     ]},
-    {category:"Cars", budgeted:500, subCategoryBudgetItems:[]}
+    {category:"Cars", budgeted:500, subCategoryBudgetItems:[
+      {category:"Car Loan(s)", budgeted:300, subCategoryBudgetItems:[]},
+      {category:"Gas", budgeted:100, subCategoryBudgetItems:[]},
+      {category:"Car Insurance", budgeted:100, subCategoryBudgetItems:[]}
+    ]}
     ]
+
+  selectedBudgetItem: BudgetItem = this.budgetItems[0];
+
+  onClickBudgetItem(budgetItem:BudgetItem) {
+      console.log("clicked: ", budgetItem);
+      this.selectedBudgetItem = budgetItem;
+  }
 
   onClickBudgeted(budgetItem:BudgetItem, direction:string) {
     let changeAmount: number = 100
