@@ -9,10 +9,7 @@ import { BudgetItem } from '../budget-item/BudgetItem'
 export class BreakdownComponent implements OnInit {
 
   @Input()
-  categoryGroup: string;
-
-  @Input()
-  budgetItems: BudgetItem[];
+  categoryGroupBudgetItem: BudgetItem;
 
   constructor() { }
 
