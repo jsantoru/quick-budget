@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { BudgetItem } from '../budget-item/BudgetItem'
+import {CategoryGroup} from "../budget-item/CategoryGroup";
 
 @Component({
   selector: 'app-budget',
@@ -10,12 +11,12 @@ export class BudgetComponent implements OnInit {
 
   toBeBudgeted: number = 0;
 
-  budgetItems: BudgetItem[] = [
-    {category:"Housing", budgeted: 2000, subCategoryBudgetItems:[
-      {category:"Rent/Mortgage", budgeted: 1700, subCategoryBudgetItems:[]},
-      {category:"Maintenance", budgeted: 300, subCategoryBudgetItems:[]}
+  categoryGroups: CategoryGroup[] = [
+    /*{categoryGroup:"Housing", budgetItems:[
+      {category:"Rent/Mortgage", budgeted: 1700},
+      {category:"Maintenance", budgeted: 300}
     ]},
-    {category:"Food", budgeted:500, subCategoryBudgetItems:[
+    {category:"Food", budgetItems:[
       {category:"Groceries", budgeted:300, subCategoryBudgetItems:[]},
       {category:"Eating Out", budgeted:200, subCategoryBudgetItems:[]}
     ]},
@@ -23,19 +24,23 @@ export class BudgetComponent implements OnInit {
       {category:"Car Loan(s)", budgeted:300, subCategoryBudgetItems:[]},
       {category:"Gas", budgeted:100, subCategoryBudgetItems:[]},
       {category:"Car Insurance", budgeted:100, subCategoryBudgetItems:[]}
-    ]}
+    ]}*/
+    new CategoryGroup(
+      "Housing", [
+        {category:"Rent/Mortgage", budgeted: 1700},
+        {category:"Maintenance", budgeted: 300}]
+      )
     ]
 
-  selectedBudgetItem: BudgetItem = this.budgetItems[0];
+  selectedCategoryGroup: CategoryGroup = this.categoryGroups[0];
 
-  onClickBudgetItem(budgetItem:BudgetItem) {
-      console.log("clicked: ", budgetItem);
-      this.selectedBudgetItem = budgetItem;
+  onClickCategoryGroup(categoryGroup:CategoryGroup) {
+      console.log("clicked: ", categoryGroup);
+      this.selectedCategoryGroup = categoryGroup;
   }
 
-  onValueChange(budgetItem:BudgetItem, changedBy:number) {
+  onValueChange(categoryGroup:CategoryGroup, changedBy:number) {
     console.log("onvaluechange: ", changedBy);
-    budgetItem.budgeted += changedBy;
     this.toBeBudgeted -= changedBy;
   }
 
@@ -56,7 +61,7 @@ export class BudgetComponent implements OnInit {
   set familySize(arg:number) {
     if(arg) {
       console.log("BudgetComponent: ", arg);
-      this.budgetItems.push({category: "New", budgeted: 100, subCategoryBudgetItems:[]});
+      //this.budgetItems.push({category: "New", budgeted: 100, subCategoryBudgetItems:[]});
     }
   }
 

@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { BudgetItem } from '../budget-item/BudgetItem'
+import {CategoryGroup} from "../budget-item/CategoryGroup";
 
 @Component({
   selector: 'app-breakdown',
@@ -9,7 +10,12 @@ import { BudgetItem } from '../budget-item/BudgetItem'
 export class BreakdownComponent implements OnInit {
 
   @Input()
-  categoryGroupBudgetItem: BudgetItem;
+  categoryGroup: CategoryGroup;
+
+  onValueChange(budgetItem:BudgetItem, changedByValue:number) {
+    console.log("onvaluechange: ", changedByValue);
+    budgetItem.budgeted += changedByValue;
+  }
 
   constructor() { }
 
