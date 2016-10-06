@@ -33,6 +33,12 @@ export class BudgetComponent implements OnInit {
       this.selectedBudgetItem = budgetItem;
   }
 
+  onValueChange(budgetItem:BudgetItem, changedBy:number) {
+    console.log("onvaluechange: ", changedBy);
+    budgetItem.budgeted += changedBy;
+    this.toBeBudgeted -= changedBy;
+  }
+
   onClickBudgeted(budgetItem:BudgetItem, direction:string) {
     let changeAmount: number = 100
     if(direction == "up") {

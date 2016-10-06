@@ -6,11 +6,15 @@
       (click)="onClickBudgetItem(budgetItem)">
       <td>{{budgetItem.category}}</td>
       <td align="right">
-        <span class="glyphicon glyphicon glyphicon-download"
+        <app-adjustable-number-badge
+          [value]="budgetItem.budgeted"
+          [adjustByValue]=100
+        (valueChangedByEvent)="onValueChange(budgetItem,$event)"></app-adjustable-number-badge>
+        <!--<span class="glyphicon glyphicon glyphicon-download"
               (click)="onClickBudgeted(budgetItem, 'down')"></span>
         <span class="badge badge-success">${{budgetItem.budgeted}}</span>
         <span class="glyphicon glyphicon glyphicon-upload"
-              (click)="onClickBudgeted(budgetItem, 'up')"></span></td>
+              (click)="onClickBudgeted(budgetItem, 'up')"></span></td>-->
     </tr>
   </table>
   <span>To Be Budgeted </span>

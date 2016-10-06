@@ -11,7 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { QBInputComponent } from './qbinput/qbinput.component';
 import { BudgetComponent } from './budget/budget.component';
 import { BreakdownComponent } from './breakdown/breakdown.component';
-import { BudgetItemComponent } from './budget-item/budget-item.component'
+import { BudgetItemComponent } from './budget-item/budget-item.component';
+import { AdjustableNumberBadgeComponent } from './adjustable-number-badge/adjustable-number-badge.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BudgetItemComponent } from './budget-item/budget-item.component'
     QBInputComponent,
     BudgetComponent,
     BreakdownComponent,
-    BudgetItemComponent
+    BudgetItemComponent,
+    AdjustableNumberBadgeComponent
   ],
   imports: [
     BrowserModule,
