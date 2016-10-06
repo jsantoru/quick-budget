@@ -1,16 +1,12 @@
 <div id="budgettable">
-  <h4>Budget</h4>
+  <h4>Budget for {{theFamilySize}} on ${{theMonthlyIncome}}</h4>
   <table class="table table-striped table-condensed table-hover">
     <tr><th>Category Group</th><th>Budgeted</th></tr>
     <tr *ngFor="let categoryGroup of categoryGroups"
       (click)="onClickCategoryGroup(categoryGroup)">
       <td>{{categoryGroup.name}}</td>
       <td align="right">
-        <app-adjustable-number-badge
-          [value]="categoryGroup.budgeted"
-          [adjustByValue]=100
-          (valueChangedByEvent)="onValueChange(categoryGroup,$event)">
-        </app-adjustable-number-badge>
+        <span class="badge">${{categoryGroup.budgeted}}</span>
     </tr>
   </table>
   <span>To Be Budgeted </span>
