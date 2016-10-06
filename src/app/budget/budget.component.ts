@@ -8,14 +8,10 @@ import {CategoryGroup} from "../budget-item/CategoryGroup";
   styleUrls: ['./budget.component.css']
 })
 export class BudgetComponent implements OnInit {
-
-  @Input()
   theMonthlyIncome: number;
-
   theFamilySize: number;
 
   categoryGroups: CategoryGroup[];
-
   selectedCategoryGroup: CategoryGroup;
 
   onClickCategoryGroup(categoryGroup:CategoryGroup) {
@@ -40,7 +36,6 @@ export class BudgetComponent implements OnInit {
   set familySize(familySize:number) {
     if(familySize) {
       console.log("BudgetComponent: ", familySize);
-      //this.budgetItems.push({category: "New", budgeted: 100, subCategoryBudgetItems:[]});
       this.theFamilySize = familySize;
     }
   }
