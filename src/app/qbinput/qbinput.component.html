@@ -1,0 +1,27 @@
+<div id="qbinput">
+  <p>Enter your family size and income to get started</p>
+  <div id="qbinput-family">
+    <span>Family Size </span>
+    <span class="glyphicon glyphicon glyphicon-download"
+          (click)="onClickFamily('down')"></span>
+    <span class="badge">{{familySize}}</span>
+    <span class="glyphicon glyphicon glyphicon-upload"
+          (click)="onClickFamily('up')"></span>
+  </div>
+  <div id="qbinput-income">
+    <span>Monthly Income </span>
+    <span class="glyphicon glyphicon glyphicon-download"
+          (click)="onClickIncome('down')"></span>
+    <span class="badge">${{monthlyIncome}}</span>
+    <span class="glyphicon glyphicon glyphicon-upload"
+          (click)="onClickIncome('up')"></span>
+  </div>
+  <hr/>
+</div>
+<!-- set the budget based on the input -->
+<div id="tables">
+  <app-budget
+    [familySize]="familySize"
+    [monthlyIncome]="monthlyIncome">
+  </app-budget>
+</div>

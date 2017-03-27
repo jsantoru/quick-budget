@@ -1,0 +1,17 @@
+<div id="breakdowntable">
+  <h4>{{categoryGroup.name}} Breakdown</h4>
+  <table class="table table-striped table-condensed table-hover">
+    <tr><th>Category</th><th>Budgeted</th></tr>
+    <tr *ngFor="let budgetItem of categoryGroup.budgetItems">
+      <td>{{budgetItem.category}}</td>
+      <td align="right">
+        <app-adjustable-number-badge
+          [value]="budgetItem.budgeted"
+          [adjustByValue]=100
+          (valueChangedByEvent)="onValueChange(budgetItem,$event)">
+        </app-adjustable-number-badge>
+      </td>
+    </tr>
+  </table>
+  <span>{{categoryGroup.name}} Total </span><span class="badge">${{categoryGroup.budgeted}}</span>
+</div>
